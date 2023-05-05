@@ -16,7 +16,7 @@ struct BlinkerApp: App {
             ContentView()
         }
         .windowStyle(.hiddenTitleBar)
-        .defaultSize(width: 250, height: 125)
+        .defaultSize(width: 800, height: 640)
     }
 }
 

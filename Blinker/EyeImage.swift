@@ -53,12 +53,12 @@ struct EyeImage: View {
                     .offset(x: -geometry.size.height / 10, y: -geometry.size.height / 10)
             }
         }
-        .frame(width: 100, height: 80)
     }
 }
 
 struct EyeImage_Previews: PreviewProvider {
     static var previews: some View {
         EyeImage()
+            .frame(width: 100, height: 80)
     }
 }
