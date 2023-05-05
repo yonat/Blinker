@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EyeImage: View {
-    @State var blinkAmount: Double = 1
+    var color: Color = .teal
 
     var body: some View {
         GeometryReader { geometry in
@@ -34,7 +34,7 @@ struct EyeImage: View {
                 .shadow(radius: 5, y: 5)
                 // Iris
                 Circle()
-                    .fill(Color.teal)
+                    .fill(color)
                     .frame(width: geometry.size.height * 0.7, height: geometry.size.height * 0.7)
                 // Pupil
                 Circle()
@@ -52,13 +52,8 @@ struct EyeImage: View {
                     .frame(width: geometry.size.height / 10, height: geometry.size.height / 10)
                     .offset(x: -geometry.size.height / 10, y: -geometry.size.height / 10)
             }
-            .scaleEffect(x: 1, y: blinkAmount)
-            .animation(.default.repeatForever(autoreverses: true), value: blinkAmount)
         }
         .frame(width: 100, height: 80)
-        .task {
-            blinkAmount = 0
-        }
     }
 }
 

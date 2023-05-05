@@ -10,7 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         EyeImage()
-        .ignoresSafeArea()
+            .modifier(Pulsating(
+                pulseDuration: 0.15,
+                delay: .constant(1.5),
+                scaleFactors: .init(x: 1, y: 0.01))
+            )
+            .ignoresSafeArea()
     }
 }
 
@@ -19,3 +24,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+// TODO:
+// - change eye color
+// - show once every n secs, for m blinks
