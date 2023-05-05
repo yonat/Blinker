@@ -12,6 +12,7 @@
 		DCFB88082A04F10E00EFD25C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFB88072A04F10E00EFD25C /* Assets.xcassets */; };
 		DCFB880B2A04F10E00EFD25C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFB880A2A04F10E00EFD25C /* Preview Assets.xcassets */; };
 		DCFB88132A04F19C00EFD25C /* EyeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB88122A04F19C00EFD25C /* EyeImage.swift */; };
+		DCFB88192A05067200EFD25C /* DelayedBlink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB88182A05067200EFD25C /* DelayedBlink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DCFB880A2A04F10E00EFD25C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DCFB880C2A04F10E00EFD25C /* Blinker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blinker.entitlements; sourceTree = "<group>"; };
 		DCFB88122A04F19C00EFD25C /* EyeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeImage.swift; sourceTree = "<group>"; };
+		DCFB88182A05067200EFD25C /* DelayedBlink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedBlink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				DCFB880C2A04F10E00EFD25C /* Blinker.entitlements */,
 				DCFB88092A04F10E00EFD25C /* Preview Content */,
 				DCFB88122A04F19C00EFD25C /* EyeImage.swift */,
+				DCFB88182A05067200EFD25C /* DelayedBlink.swift */,
 			);
 			path = Blinker;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFB88192A05067200EFD25C /* DelayedBlink.swift in Sources */,
 				DCFB88132A04F19C00EFD25C /* EyeImage.swift in Sources */,
 				DCFB88062A04F10D00EFD25C /* ContentView.swift in Sources */,
 				DCFB88042A04F10D00EFD25C /* BlinkerApp.swift in Sources */,

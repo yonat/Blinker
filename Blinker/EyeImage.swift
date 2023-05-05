@@ -39,7 +39,7 @@ struct EyeImage: View {
                 // Pupil
                 Circle()
                     .fill(Color.black)
-                    .frame(width: geometry.size.height / 4, height: geometry.size.height / 4)
+                    .frame(width: geometry.size.height / 3, height: geometry.size.height / 3)
                     .shadow(radius: 3, y: 3)
                 // Glare
                 Circle()
