@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var eyeColor: Color
 
     var body: some View {
         GeometryReader { geometry in
             let eyeWidth = geometry.size.width / 2.5
             HStack {
-                EyeImage()
+                EyeImage(color: $eyeColor)
                     .frame(width: eyeWidth, height: eyeWidth * 0.8)
                 Spacer()
                     .frame(width: eyeWidth / 2)
-                EyeImage()
+                EyeImage(color: $eyeColor)
                     .frame(width: eyeWidth, height: eyeWidth * 0.8)
             }
             .modifier(Pulsating(
@@ -32,10 +33,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(eyeColor: .constant(.brown))
     }
 }
 
 // TODO:
-// - configure eye color
 // - show once every n secs, for m blinks

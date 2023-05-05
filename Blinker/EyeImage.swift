@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct EyeImage: View {
-    var color: Color = .teal
+    @Binding var color: Color
+
+    init(color: Binding<Color> = .constant(.teal)) {
+        self._color = color
+    }
 
     var body: some View {
         GeometryReader { geometry in
