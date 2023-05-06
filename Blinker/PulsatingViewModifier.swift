@@ -1,5 +1,5 @@
 //
-//  PulsatingView.swift
+//  PulsatingViewModifier .swift
 //  CallAbout
 //
 //  Created by Yonat Sharon on 22/07/2022.
@@ -10,48 +10,44 @@ import SwiftUI
 
 /// Scales view in repeating pulses, like a beating heart
 struct Pulsating: ViewModifier {
-    private let pulseDuration: TimeInterval
-    private let scaleFactors: CGPoint
-    @Binding var delay: TimeInterval
+    private let duration: TimeInterval
+    private let scale: CGPoint
+    @Binding var interval: TimeInterval
 
     @State private var timer: Publishers.Autoconnect<Timer.TimerPublisher>
     @State private var scaleChange: CGFloat = 0
 
     /// - Parameters:
-    ///   - pulseDuration: Duration of single pulse
-    ///   - delay: Delay between pulses
-    ///   - scaleFactors: How much to scale up the content
+    ///   - duration: Duration of single pulse
+    ///   - interval: Interval between pulses
+    ///   - scale: How much to scale up the content (1 = no change)
     init(
-        pulseDuration: TimeInterval = 0.25,
-        delay: Binding<TimeInterval> = .constant(3),
-        scaleFactors: CGPoint = .init(x: 1.5, y: 1.5)
+        duration: TimeInterval = 0.25,
+        interval: Binding<TimeInterval> = .constant(3),
+        scale: CGPoint = .init(x: 1.5, y: 1.5)
     ) {
-        self.pulseDuration = pulseDuration
-        self.scaleFactors = scaleFactors
-        self._delay = delay
-        timer = .init(delay: delay.wrappedValue, forDuration: pulseDuration)
+        self.duration = duration
+        self.scale = scale
+        self._interval = interval
+        timer = .init(interval: interval.wrappedValue, forDuration: duration)
     }
 
     func body(content: Content) -> some View {
         content
             .scaleEffect(
-                x: scaleFactors.x.far(by: scaleChange),
-                y: scaleFactors.y.far(by: scaleChange)
+                x: 1 + scaleChange * (scale.x - 1),
+                y: 1 + scaleChange * (scale.y - 1)
             )
-            .animation(.easeInOut(duration: pulseDuration), value: scaleChange)
+            .animation(.easeInOut(duration: duration), value: scaleChange)
             .onReceive(timer) { _ in
                 scaleChange = 1
-                DispatchQueue.main.asyncAfter(deadline: .now() + pulseDuration) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
                     scaleChange = 0
                 }
             }
-            .onChange(of: delay) { newValue in
-                timer = .init(delay: newValue, forDuration: pulseDuration)
+            .onChange(of: interval) { newValue in
+                timer = .init(interval: newValue, forDuration: duration)
             }
-    }
-
-    private func setTimer(delay: CGFloat) {
-        timer = Timer.publish(every: delay, on: .main, in: .common).autoconnect()
     }
 }
 
@@ -65,7 +61,7 @@ private struct PulsatingHeart: View {
             Image(systemName: "heart.fill")
                 .font(.system(size: 96))
                 .foregroundColor(.red)
-                .modifier(Pulsating(delay: $interval))
+                .modifier(Pulsating(interval: $interval))
         }
     }
 }
@@ -76,15 +72,9 @@ struct PulsatingViewModifier_Previews: PreviewProvider {
     }
 }
 
-extension CGFloat {
-    func far(by: CGFloat) -> CGFloat {
-        (self - 1) * by + 1
-    }
-}
-
 extension Publishers.Autoconnect<Timer.TimerPublisher> {
-    convenience init(delay: TimeInterval, forDuration duration: TimeInterval) {
-        let period = delay > 0 ? Swift.max(delay, duration) : TimeInterval.infinity
+    convenience init(interval: TimeInterval, forDuration duration: TimeInterval) {
+        let period = interval > 0 ? Swift.max(interval, duration) : TimeInterval.infinity
         self.init(upstream: Timer.publish(every: period, on: .main, in: .common))
     }
 }

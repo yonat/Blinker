@@ -22,12 +22,12 @@ struct ContentView: View {
                     .frame(width: eyeWidth, height: eyeWidth * 0.8)
             }
             .modifier(Pulsating(
-                pulseDuration: 0.15,
-                delay: .constant(1.5),
-                scaleFactors: .init(x: 1, y: 0.01))
+                duration: 0.15,
+                interval: .constant(1.5),
+                scale: .init(x: 1, y: 0.01))
             )
         }
-            .ignoresSafeArea()
+        .ignoresSafeArea()
     }
 }
 
@@ -39,3 +39,7 @@ struct ContentView_Previews: PreviewProvider {
 
 // TODO:
 // - show once every n secs, for m blinks
+// - make new windows transparent
+// - allow to select different colors for different windows
+// - remove (most) standard menus
+// - add About
