@@ -26,6 +26,7 @@
 		DCFB88122A04F19C00EFD25C /* EyeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeShape.swift; sourceTree = "<group>"; };
 		DCFB881A2A0528E200EFD25C /* PulsatingViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulsatingViewModifier.swift; sourceTree = "<group>"; };
 		DCFB881C2A06453900EFD25C /* FlashingViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashingViewModifier.swift; sourceTree = "<group>"; };
+		DCFB881E2A06AE3200EFD25C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +43,7 @@
 		DCFB87F72A04F10D00EFD25C = {
 			isa = PBXGroup;
 			children = (
+				DCFB881E2A06AE3200EFD25C /* README.md */,
 				DCFB88022A04F10D00EFD25C /* Blinker */,
 				DCFB88012A04F10D00EFD25C /* Products */,
 			);
