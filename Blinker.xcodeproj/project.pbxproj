@@ -13,6 +13,7 @@
 		DCFB880B2A04F10E00EFD25C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFB880A2A04F10E00EFD25C /* Preview Assets.xcassets */; };
 		DCFB88132A04F19C00EFD25C /* EyeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB88122A04F19C00EFD25C /* EyeImage.swift */; };
 		DCFB881B2A0528E200EFD25C /* PulsatingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB881A2A0528E200EFD25C /* PulsatingViewModifier.swift */; };
+		DCFB881D2A06453900EFD25C /* FlashingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB881C2A06453900EFD25C /* FlashingViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DCFB880C2A04F10E00EFD25C /* Blinker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blinker.entitlements; sourceTree = "<group>"; };
 		DCFB88122A04F19C00EFD25C /* EyeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeImage.swift; sourceTree = "<group>"; };
 		DCFB881A2A0528E200EFD25C /* PulsatingViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulsatingViewModifier.swift; sourceTree = "<group>"; };
+		DCFB881C2A06453900EFD25C /* FlashingViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashingViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DCFB88092A04F10E00EFD25C /* Preview Content */,
 				DCFB88122A04F19C00EFD25C /* EyeImage.swift */,
 				DCFB881A2A0528E200EFD25C /* PulsatingViewModifier.swift */,
+				DCFB881C2A06453900EFD25C /* FlashingViewModifier.swift */,
 			);
 			path = Blinker;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				DCFB88132A04F19C00EFD25C /* EyeImage.swift in Sources */,
 				DCFB88062A04F10D00EFD25C /* ContentView.swift in Sources */,
 				DCFB88042A04F10D00EFD25C /* BlinkerApp.swift in Sources */,
+				DCFB881D2A06453900EFD25C /* FlashingViewModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

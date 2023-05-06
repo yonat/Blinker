@@ -10,6 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @Binding var eyeColor: Color
 
+    let blinkDuration: TimeInterval = 0.15
+    let blinkInterval: TimeInterval = 1.5
+    let blinksPerFlash: TimeInterval = 3
+    let blinksBetweenFlashes: TimeInterval = 5
+
     var body: some View {
         GeometryReader { geometry in
             let eyeWidth = geometry.size.width / 2.5
@@ -22,10 +27,15 @@ struct ContentView: View {
                     .frame(width: eyeWidth, height: eyeWidth * 0.8)
             }
             .modifier(Pulsating(
-                duration: 0.15,
-                interval: .constant(1.5),
-                scale: .init(x: 1, y: 0.01))
-            )
+                duration: blinkDuration,
+                interval: .constant(blinkInterval),
+                scale: .init(x: 1, y: 0.01)
+            ))
+            .modifier(Flashing(
+                duration: blinksPerFlash * blinkInterval + blinkDuration,
+                interval: .constant((blinksPerFlash + blinksBetweenFlashes) * blinkInterval),
+                animationDuration: blinkDuration * 2
+            ))
         }
         .ignoresSafeArea()
     }
@@ -38,7 +48,6 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 // TODO:
-// - show once every n secs, for m blinks
 // - make new windows transparent
 // - allow to select different colors for different windows
 // - remove (most) standard menus
