@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  BlinkingEyesView.swift
 //  Blinker
 //
 //  Created by Yonat Sharon on 05/05/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct BlinkingEyesView: View {
     @Binding var eyeColor: Color
 
     let blinkDuration: TimeInterval = 0.15
@@ -19,11 +19,11 @@ struct ContentView: View {
         GeometryReader { geometry in
             let eyeWidth = geometry.size.width / 2.5
             HStack {
-                EyeImage(color: $eyeColor)
+                EyeShape(color: $eyeColor)
                     .frame(width: eyeWidth, height: eyeWidth * 0.8)
                 Spacer()
                     .frame(width: eyeWidth / 2)
-                EyeImage(color: $eyeColor)
+                EyeShape(color: $eyeColor)
                     .frame(width: eyeWidth, height: eyeWidth * 0.8)
             }
             .modifier(Pulsating(
@@ -41,14 +41,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct BlinkingEyesView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(eyeColor: .constant(.brown))
+        BlinkingEyesView(eyeColor: .constant(.brown))
     }
 }
-
-// TODO:
-// - make new windows transparent
-// - allow to select different colors for different windows
-// - remove (most) standard menus
-// - add About

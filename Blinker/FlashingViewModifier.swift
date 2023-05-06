@@ -18,8 +18,9 @@ struct Flashing: ViewModifier {
     @State private var alpha: CGFloat = 0
 
     /// - Parameters:
-    ///   - duration: Duration of single pulse
-    ///   - interval: Delay between pulses
+    ///   - duration: Duration of single flash
+    ///   - interval: Interval between flashes
+    ///   - animationDuration: Duration of the show/hide animation
     init(
         duration: TimeInterval = 1,
         interval: Binding<TimeInterval> = .constant(3),

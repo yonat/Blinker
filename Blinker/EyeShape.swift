@@ -1,5 +1,5 @@
 //
-//  EyeImage.swift
+//  EyeShape.swift
 //  Blinker
 //
 //  Created by Yonat Sharon on 05/05/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EyeImage: View {
+struct EyeShape: View {
     @Binding var color: Color
 
     init(color: Binding<Color> = .constant(.teal)) {
@@ -60,9 +60,9 @@ struct EyeImage: View {
     }
 }
 
-struct EyeImage_Previews: PreviewProvider {
+struct EyeShape_Previews: PreviewProvider {
     static var previews: some View {
-        EyeImage()
+        EyeShape()
             .frame(width: 100, height: 80)
     }
 }

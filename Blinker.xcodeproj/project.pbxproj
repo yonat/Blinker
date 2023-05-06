@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		DCFB88042A04F10D00EFD25C /* BlinkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB88032A04F10D00EFD25C /* BlinkerApp.swift */; };
-		DCFB88062A04F10D00EFD25C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB88052A04F10D00EFD25C /* ContentView.swift */; };
+		DCFB88062A04F10D00EFD25C /* BlinkingEyesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB88052A04F10D00EFD25C /* BlinkingEyesView.swift */; };
 		DCFB88082A04F10E00EFD25C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFB88072A04F10E00EFD25C /* Assets.xcassets */; };
 		DCFB880B2A04F10E00EFD25C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFB880A2A04F10E00EFD25C /* Preview Assets.xcassets */; };
-		DCFB88132A04F19C00EFD25C /* EyeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB88122A04F19C00EFD25C /* EyeImage.swift */; };
+		DCFB88132A04F19C00EFD25C /* EyeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB88122A04F19C00EFD25C /* EyeShape.swift */; };
 		DCFB881B2A0528E200EFD25C /* PulsatingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB881A2A0528E200EFD25C /* PulsatingViewModifier.swift */; };
 		DCFB881D2A06453900EFD25C /* FlashingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB881C2A06453900EFD25C /* FlashingViewModifier.swift */; };
 /* End PBXBuildFile section */
@@ -19,11 +19,11 @@
 /* Begin PBXFileReference section */
 		DCFB88002A04F10D00EFD25C /* Blinker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blinker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFB88032A04F10D00EFD25C /* BlinkerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkerApp.swift; sourceTree = "<group>"; };
-		DCFB88052A04F10D00EFD25C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DCFB88052A04F10D00EFD25C /* BlinkingEyesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkingEyesView.swift; sourceTree = "<group>"; };
 		DCFB88072A04F10E00EFD25C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCFB880A2A04F10E00EFD25C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DCFB880C2A04F10E00EFD25C /* Blinker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blinker.entitlements; sourceTree = "<group>"; };
-		DCFB88122A04F19C00EFD25C /* EyeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeImage.swift; sourceTree = "<group>"; };
+		DCFB88122A04F19C00EFD25C /* EyeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeShape.swift; sourceTree = "<group>"; };
 		DCFB881A2A0528E200EFD25C /* PulsatingViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulsatingViewModifier.swift; sourceTree = "<group>"; };
 		DCFB881C2A06453900EFD25C /* FlashingViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashingViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,11 +59,11 @@
 			isa = PBXGroup;
 			children = (
 				DCFB88032A04F10D00EFD25C /* BlinkerApp.swift */,
-				DCFB88052A04F10D00EFD25C /* ContentView.swift */,
+				DCFB88052A04F10D00EFD25C /* BlinkingEyesView.swift */,
 				DCFB88072A04F10E00EFD25C /* Assets.xcassets */,
 				DCFB880C2A04F10E00EFD25C /* Blinker.entitlements */,
 				DCFB88092A04F10E00EFD25C /* Preview Content */,
-				DCFB88122A04F19C00EFD25C /* EyeImage.swift */,
+				DCFB88122A04F19C00EFD25C /* EyeShape.swift */,
 				DCFB881A2A0528E200EFD25C /* PulsatingViewModifier.swift */,
 				DCFB881C2A06453900EFD25C /* FlashingViewModifier.swift */,
 			);
@@ -149,8 +149,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCFB881B2A0528E200EFD25C /* PulsatingViewModifier.swift in Sources */,
-				DCFB88132A04F19C00EFD25C /* EyeImage.swift in Sources */,
-				DCFB88062A04F10D00EFD25C /* ContentView.swift in Sources */,
+				DCFB88132A04F19C00EFD25C /* EyeShape.swift in Sources */,
+				DCFB88062A04F10D00EFD25C /* BlinkingEyesView.swift in Sources */,
 				DCFB88042A04F10D00EFD25C /* BlinkerApp.swift in Sources */,
 				DCFB881D2A06453900EFD25C /* FlashingViewModifier.swift in Sources */,
 			);
