@@ -23,27 +23,15 @@ struct BlinkerApp: App {
         }
         .windowStyle(.hiddenTitleBar)
         .defaultSize(width: 500, height: 240)
-        .commands {
-            // App menu
+        .commandsReplaced {
             CommandGroup(replacing: .appSettings) {
-                Button("Eye Color...") {
-                    NSColorPanel.shared.color = NSColor(eyeColor)
-                    NSColorPanel.shared.orderFront(nil)
+                Section {
+                    Button("Eye Color...") {
+                        NSColorPanel.shared.color = NSColor(eyeColor)
+                        NSColorPanel.shared.orderFront(nil)
+                    }
                 }
             }
-            CommandGroup(replacing: .appVisibility) {}
-            CommandGroup(replacing: .systemServices) {}
-
-            // File menu
-            CommandGroup(replacing: .newItem) {}
-            CommandGroup(replacing: .saveItem) {}
-
-            // Edit menu
-            CommandGroup(replacing: .pasteboard) {}
-            CommandGroup(replacing: .undoRedo) {}
-
-            // Window menu
-            CommandGroup(replacing: .windowSize) {}
         }
     }
 }
@@ -52,17 +40,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         for window in NSApplication.shared.windows {
             window.makeFloatingContent()
-        }
-    }
-
-    func applicationWillUpdate(_ notification: Notification) {
-        // hack to remove standard menus
-        if let menu = NSApplication.shared.mainMenu {
-            for title in ["File", "Edit", "View", "Window", "Help"] {
-                if let item = menu.items.first(where: { $0.title == title }) {
-                    menu.removeItem(item);
-                }
-            }
         }
     }
 }
