@@ -48,12 +48,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension NSWindow {
     func makeFloatingContent() {
-        // TODO: let clicks pass through
         level = .floating
         backgroundColor = .clear
-        isMovableByWindowBackground = true
+        ignoresMouseEvents = true
         collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
 
+        tabbingMode = .disallowed
+        styleMask.remove(.fullScreen)
         standardWindowButton(.closeButton)?.isHidden = true
         standardWindowButton(.miniaturizeButton)?.isHidden = true
         standardWindowButton(.zoomButton)?.isHidden = true
