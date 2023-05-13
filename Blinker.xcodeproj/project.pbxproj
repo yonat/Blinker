@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DCEA23E12A0D7E6800712711 /* WindowPositionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA23E02A0D7E6800712711 /* WindowPositionModifier.swift */; };
 		DCFB88042A04F10D00EFD25C /* BlinkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB88032A04F10D00EFD25C /* BlinkerApp.swift */; };
 		DCFB88062A04F10D00EFD25C /* BlinkingEyesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB88052A04F10D00EFD25C /* BlinkingEyesView.swift */; };
 		DCFB88082A04F10E00EFD25C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFB88072A04F10E00EFD25C /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DCEA23E02A0D7E6800712711 /* WindowPositionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowPositionModifier.swift; sourceTree = "<group>"; };
 		DCFB88002A04F10D00EFD25C /* Blinker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blinker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFB88032A04F10D00EFD25C /* BlinkerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkerApp.swift; sourceTree = "<group>"; };
 		DCFB88052A04F10D00EFD25C /* BlinkingEyesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkingEyesView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				DCFB88122A04F19C00EFD25C /* EyeShape.swift */,
 				DCFB881A2A0528E200EFD25C /* PulsatingViewModifier.swift */,
 				DCFB881C2A06453900EFD25C /* FlashingViewModifier.swift */,
+				DCEA23E02A0D7E6800712711 /* WindowPositionModifier.swift */,
 			);
 			path = Blinker;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				DCFB881B2A0528E200EFD25C /* PulsatingViewModifier.swift in Sources */,
 				DCFB88132A04F19C00EFD25C /* EyeShape.swift in Sources */,
 				DCFB88062A04F10D00EFD25C /* BlinkingEyesView.swift in Sources */,
+				DCEA23E12A0D7E6800712711 /* WindowPositionModifier.swift in Sources */,
 				DCFB88042A04F10D00EFD25C /* BlinkerApp.swift in Sources */,
 				DCFB881D2A06453900EFD25C /* FlashingViewModifier.swift in Sources */,
 			);

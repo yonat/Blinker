@@ -20,10 +20,12 @@ struct BlinkerApp: App {
                     guard let colorPanel = notification.object as? NSColorPanel else { return }
                     eyeColor = Color(colorPanel.color)
                 }
+                .modifier(RandomWindowPosition(every: 12))
         }
         .windowStyle(.hiddenTitleBar)
-        .defaultSize(width: 500, height: 240)
+        .defaultSize(width: 500, height: 160)
         .commandsReplaced {
+            // TODO: keep Quit command
             CommandGroup(replacing: .appSettings) {
                 Section {
                     Button("Eye Color...") {
@@ -46,6 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension NSWindow {
     func makeFloatingContent() {
+        // TODO: let clicks pass through
         level = .floating
         backgroundColor = .clear
         isMovableByWindowBackground = true
