@@ -24,8 +24,7 @@ struct BlinkerApp: App {
         }
         .windowStyle(.hiddenTitleBar)
         .defaultSize(width: 500, height: 160)
-        .commandsReplaced {
-            // TODO: keep Quit command
+        .commands {
             CommandGroup(replacing: .appSettings) {
                 Section {
                     Button("Eye Color...") {
@@ -42,6 +41,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         for window in NSApplication.shared.windows {
             window.makeFloatingContent()
+        }
+        NSApplication.shared.removeMenu(title: "File", "Edit", "View", "Window", "Help")
+    }
+}
+
+extension NSApplication {
+    func removeMenu(title: String...) {
+        guard let menu = mainMenu else { return }
+        for menuTitle in title {
+            if let item = menu.items.first(where: { $0.title == menuTitle }) {
+                menu.removeItem(item);
+            }
         }
     }
 }
